@@ -233,10 +233,10 @@ const dropTargetCollector = (connect: DropTargetConnector, moniter: DropTargetMo
 class Picture extends React.Component<PictureProps & DragCollectedProps & DropCollectedProps> {
 
   render() {
-    const { gid, picture, connectDragSource, isDragging, connectDropTarget, isOver } = this.props;
+    const { picture, connectDragSource, isDragging, connectDropTarget } = this.props;
     return connectDropTarget!(connectDragSource!(
       <div style={{ width: 54, height: 54, margin: 10, cursor: 'move', opacity: isDragging ? 0.5 : 1, backgroundColor: 'orange', display: 'inline-block', position: 'relative' }}>
-        <img src={picture} style={{ width: '100%', height: '100%', pointerEvents: 'none' }} />
+        <img src={picture} alt="demo" style={{ width: '100%', height: '100%', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', top: 0, right: 0, width: 10, height: 10, backgroundColor: 'blue' }}></div>
       </div>
     ))
